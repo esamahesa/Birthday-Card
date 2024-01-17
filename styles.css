@@ -1,0 +1,277 @@
+@import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+:root{
+    /* Matcha Cream */
+    /* https://www.color-hex.com/color-palette/104745 */
+    --page-background: rgba(254, 255, 233, 1);
+    --card-inside-color: rgba(228, 248, 186, 1);
+    --card-front-color1: rgba(198, 233, 159, 1);
+    --card-front-color2: rgba(180, 220, 135, 1);
+    --button-color1: rgba(168, 212, 128, 1);
+    --button-color2: rgba(168, 212, 128, 0.5);
+    --font-color: rgba(0, 0, 0, .5);
+}
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background-color: var(--page-background);
+    color: var(--font-color);
+}
+
+#card{
+    width: 90vw;
+}
+
+#card, #card-front, #card-inside{
+    height: 90vh;
+}
+
+.wrap{
+    height: 100%;
+    padding: 1vh 1vw;
+}
+
+#card-front, #card-inside{
+    width: 50%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
+    position: absolute;
+    left: 50%;
+}
+
+#card-inside .wrap{
+    background-color: var(--card-inside-color);
+    box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
+}
+
+#card{
+    margin: 5vh auto; 
+    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    perspective: 5000px;
+    -moz-perspective: 5000px;
+    -webkit-perspective: 5000px;
+    position: relative;
+}
+
+#card, #card-inside, #card-front{
+    min-height: 248px;
+}
+
+#card h1{
+    text-align: center;
+    font-family: 'Nobile', sans-serif;
+    font-style: italic;
+    font-size: 5rem;
+    text-shadow: 
+        4px 4px 0px rgba(0, 0, 0, .15),
+        1px 1px 0 rgba(255, 200, 200, 255),
+        2px 2px 0 rgba(255, 150, 150, 255),
+        3px 3px 0 rgba(255, 125, 125, 255);
+}
+
+#card-inside{
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-family: 'Nobile';
+    color: var(--font-color);
+    font-style: italic;
+}
+
+.signed{
+    margin: 1.5vh 0 0 0;
+    text-align: center;
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 2rem;
+}
+
+#card-front{
+    background-color: var(--card-front-color1);
+    background-image: linear-gradient(top
+    var(--card-front-color1) 0%, 
+    var(--card-front-color2) 100%);
+
+    background-image: -moz-linear-gradient(top
+    var(--card-front-color1) 0%, 
+    var(--card-front-color2) 100%);
+
+    background-image: -webkit-linear-gradient(top
+    var(--card-front-color1) 0%, 
+    var(--card-front-color2) 100%);
+
+    transform-origin: left;
+    -moz-transform-origin: left;
+    -webkit-transform-origin: left;
+
+    transition: transform 1s linear;
+    -moz-transition: transform 1s linear;
+    -webkit-transition: transform 1s linear;
+    position: relative;
+}
+
+#card-front .wrap{
+    transition: background 1s linear;
+    -moz-transition: background 1s linear;
+    -webkit-transition: background 1s linear;
+}
+
+#card-front button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--button-color1);
+    font-family: 'Nobile', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: .5vh;
+    border: none;
+    cursor: pointer;
+    
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
+}
+
+#card-front button:hover, #card-front button:focus{
+    background-color: var(--button-color2);
+}
+
+#close{
+    display: none;
+}
+
+#card.open-fully #close, #card.open-half #close{
+    display: inline;
+}
+
+#card.open-fully #open{
+    display: none;
+}
+
+#card.open-half #card-front, #card.close-half #card-front{
+    transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg);
+}
+
+#card.open-half #card--front .wrap{
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#card.open-fully #card-front, #card.close-half #card-front{
+    background-color: var(--card-inside-color);
+}
+
+#card.open-fully #card-front{
+    transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+}
+
+#card.open-fully #card-front .wrap{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#card.open-fully #card-front .wrap *, #card.close-half #card-front .wrap *{
+    display: none;
+}
+
+#card-inside .wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+}
+
+#card-front .wrap h1{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+p{
+    text-indent: 5px;
+}
+
+*{
+    /* border: 1px solid black; */
+}
+
+/* Media query section */
+@media screen and (max-width: 280px){
+    html{
+        font-size: 11px;
+    }
+
+    #card .wrap h1{
+        font-size: 2.5rem;
+        writing-mode: vertical-rl; 
+        /* mode penulisannya vertical right-left */
+        text-orientation: upright;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 375px){
+    html{
+        font-size: 11px;
+    }
+
+    #card .wrap h1{
+        font-size: 2.6rem;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 390px){
+    html{
+        font-size: 12px;
+    }
+
+    #card .wrap h1{
+        font-size: 3rem;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 391px) and (max-width: 430px){
+    html{
+        font-size: 13px;
+    }
+
+    #card .wrap h1{
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (min-width: 431px) and (max-width: 700px){
+    html{
+        font-size: 13px;
+    }
+
+    #card .wrap h1{
+        font-size: 3rem;
+    }
+}
