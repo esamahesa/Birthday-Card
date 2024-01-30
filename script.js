@@ -11,8 +11,7 @@ let word = {
   "Paragraph 1": "Happy Birthday to u guys",
   "Paragraph 2": "Congratulations on your 25th Birthday",
   "Paragraph 3": "I hope u always healthy and happy!",
-  "Paragraph 4": "By the way, dont forget to invite me on your birthday party!",
-  "Signed": "Worshiper of God"
+  "Signed": "Mahesa Jenar"
 };
 
 // Below this, please dont edit!
