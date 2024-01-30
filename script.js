@@ -2,8 +2,8 @@
 
 let speed = {
   // If you put the Next Paragraph 500ms or even more, so will get the result of pending Writing the next paragraph
-  "Type Writer Animation and Caret Animation": 100,
-  "Next Paragraph": 100
+  "Type Writer Animation and Caret Animation": 50,
+  "Next Paragraph": 50
 };
 
 let word = {
