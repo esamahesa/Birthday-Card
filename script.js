@@ -8,7 +8,7 @@ let speed = {
 
 let word = {
   // U can change the text of the paragprah!
-  "Paragraph 1": "Happy Birthday Ka Tya",
+  "Paragraph 1": "Happy Birthday Gaes",
   "Paragraph 2": "Congratulations on your 25th Birthday",
   "Paragraph 3": "I hope u always healthy and happy!",
   "Signed": "Mahesa Jenar"
